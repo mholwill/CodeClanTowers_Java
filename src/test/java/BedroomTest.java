@@ -21,13 +21,22 @@ public class BedroomTest {
     }
 
     // add guest
-
+    @Test
+    public void checkAddGuestToRoom() {
+        bedroom.addGuest(guest1);
+        assertEquals(1, bedroom.getGuests());
+    }
 
     // remove guest
+    @Test
+    public void checkRemoveGuestFromRoom(){
+        bedroom.addGuest(guest1);
+        bedroom.removeGuest(guest1);
+        assertEquals(0, bedroom.getGuests());
+    }
 
-
-    //check capacity
-
-
-
+    @Test
+    public void checkCapacity(){
+        assertEquals(2, bedroom.getCapacity());
+    }
 }

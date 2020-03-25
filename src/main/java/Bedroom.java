@@ -19,4 +19,24 @@ public class Bedroom {
     public int getGuests() {
         return this.guests.size();
     }
+
+    public int getCapacity() {
+        return this.capacity;
+    }
+
+    public boolean hasCapacity() {
+        return this.capacity > this.guests.size();
+    }
+
+    public void addGuest(Guest guest) {
+        if (hasCapacity()) {
+            this.guests.add(guest);
+        }
+    }
+
+    public void removeGuest(Guest guest) {
+        if (this.guests.contains(guest)){
+            this.guests.remove(guest);
+        }
+    }
 }
